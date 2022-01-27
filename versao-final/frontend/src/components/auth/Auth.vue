@@ -36,13 +36,13 @@ export default {
     },
     methods: {
         signin() {
-            axios.post(`${baseApiUrl}/signin`, this.user)
-                .then(res => {
-                    this.$store.commit('setUser', res.data)
-                    localStorage.setItem(userKey, JSON.stringify(res.data))
-                    this.$router.push({ path: '/' })
-                })
-                .catch(showError)
+          axios.post(`${baseApiUrl}/signin`, this.user)
+              .then(res => {
+                  this.$store.commit('setUser', res.data)
+                  localStorage.setItem(userKey, JSON.stringify(res.data))
+                  this.$router.push({ path: '/' })
+              })
+              .catch(showError)
         },
         signup() {
             axios.post(`${baseApiUrl}/signup`, this.user)
